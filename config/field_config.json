@@ -1,0 +1,308 @@
+{
+  "register": {
+                "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "token_no": { "required": true, "type": "string" },
+                "devicetype": { "required": false, "type": "string" },
+                "deviceid":{ "required": false, "type": "string" }
+              },
+  "clearNoti": {
+                "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "token_no": { "required": true, "type": "string" }
+              },
+  "clearMessage": {
+                "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "token_no": { "required": true, "type": "string" },
+                "friendid": { "required": false, "type": "string" },
+                "gid": { "required": false, "type": "string" }
+              },
+  "getBacklogMessage": {
+                "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "token_no": { "required": true, "type": "string" }
+              },
+  "getBacklogNoti": {
+                "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "token_no": { "required": true, "type": "string" }
+              },
+  "getLastClearMsgid": {
+                "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "token_no": { "required": true, "type": "string" },
+                "friendid": { "required": true, "type": "string" }
+              },
+  "read": {
+            "trx": { "required": true, "type": "string" },
+            "cmd": { "required": true, "type": "string" },
+            "dtm": { "required": true, "type": "string" },
+            "type": { "required": true, "type": "string" },
+            "token_no": { "required": true, "type": "string" },
+            "messageid": { "required": true, "type": "string" },
+            "tosubscriberid": { "required": true, "type": "string" }
+          },
+  "chatindi": { "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "type": { "required": true, "type": "string" },
+                "token_no" : { "required": true, "type": "string" },
+                "tosubscriberid": { "required": true, "type": "string" },
+                "data": { "required": true, "type": "object" ,
+                          "properties": {
+                                           "message" : { "required": false, "type": "string" },
+                                           "sticker" : { "required": false, "type": "string" },
+                                           "image": { "required": false, "type": "string" },
+                                           "file": { "required": false, "type": "string" }
+                                        }
+                        }
+              },
+  "chatgroup": { "trx": { "required": true, "type": "string" },
+                 "cmd": { "required": true, "type": "string" },
+                 "dtm": { "required": true, "type": "string" },
+                 "type": { "required": true, "type": "string" },
+                 "gid" : { "required": true, "type": "string" },
+                 "token_no" : { "required": true, "type": "string" },
+                 "tosubscriberid": { "required": true, "type": "string" },
+                 "data": { "required": true, "type": "object" ,
+                           "properties": {
+                                            "message" : { "required": false, "type": "string" },
+                                            "sticker" : { "required": false, "type": "string" },
+                                            "image": { "required": false, "type": "string" },
+                                            "file": { "required": false, "type": "string" }
+                                         }
+                         }
+               },              
+  "response": { "trx": { "required": true, "type": "string" },
+                 "cmd": { "required": true, "type": "string" },
+                 "dtm": { "required": true, "type": "string" },
+                 "type": { "required": true, "type": "string" },
+                 "messageid":{ "required": true, "type": "string" },
+                 "resp_code" : { "required": true, "type": "number" },
+                 "resp_desc": { "required": true, "type": "string" }
+               },
+  "addWishlist": { "trx": { "required": true, "type": "string" },
+                   "cmd": { "required": true, "type": "string" },
+                   "dtm": { "required": true, "type": "string" },
+                   "type": { "required": true, "type": "string" },
+                   "fromsubscriberid": { "required": true, "type": "string" },
+                   "tosubscriberid": { "required": true, "type": "array" },
+                   "data": {  "required": true, "type": "object" ,
+                              "properties": {
+                                                    "stockitemid" : { "required": true, "type": "string" },
+                                                    "itemid" : { "required": true, "type": "string" },
+                                                    "itemname": { "required": true, "type": "string" },
+                                                    "imgfile": { "required": true, "type": "string" }
+                                            }
+                           }
+                 },
+  "reqGroup": { "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "type": { "required": true, "type": "string" },
+                "fromsubscriberid": { "required": true, "type": "string" },
+                "tosubscriberid": { "required": true, "type": "array" },
+                "data": {  "required": true, "type": "object" ,
+                           "properties": {
+                                            "gid": { "required": true, "type": "string" },
+                                            "groupname": { "required": true, "type": "string" },
+                                            "imgfile": { "required": true, "type": "string" },
+                                            "mastername" :{ "required": true, "type": "string" }
+                                         }
+                        }
+              },             
+  "joinGroup": { "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "type": { "required": true, "type": "string" },
+                "fromsubscriberid": { "required": true, "type": "string" },
+                "tosubscriberid": { "required": true, "type": "array" },
+                "data": {  "required": true, "type": "object" ,
+                           "properties": {
+                                            "gid": { "required": true, "type": "string" },
+                                            "groupname": { "required": true, "type": "string" },
+                                            "imgfile": { "required": true, "type": "string" }
+                                         }
+                        }
+              },
+  "kickGroupMB" : { "trx": { "required": true, "type": "string" },
+                    "cmd": { "required": true, "type": "string" },
+                    "dtm": { "required": true, "type": "string" },
+                    "type": { "required": true, "type": "string" },
+                    "fromsubscriberid": { "required": true, "type": "string" },
+                    "tosubscriberid": { "required": true, "type": "array" },
+                    "data": {  "required": true, "type": "object" ,
+                               "properties": {
+                                                "gid": { "required": true, "type": "string" },
+                                                "groupname": { "required": true, "type": "string" },
+                                                "imgfile": { "required": true, "type": "string" }
+                                             }
+                            }
+                  },
+  "denyGroup" : { "trx": { "required": true, "type": "string" },
+                  "cmd": { "required": true, "type": "string" },
+                  "dtm": { "required": true, "type": "string" },
+                  "type": { "required": true, "type": "string" },
+                  "fromsubscriberid": { "required": true, "type": "string" },
+                  "tosubscriberid": { "required": true, "type": "array" },
+                  "data": {  "required": true, "type": "object" ,
+                             "properties": {
+                                              "gid": { "required": true, "type": "string" },
+                                              "groupname": { "required": true, "type": "string" },
+                                              "imgfile": { "required": true, "type": "string" }
+                                           }
+                          }
+                },
+  "leaveGroup" : { "trx": { "required": true, "type": "string" },
+                  "cmd": { "required": true, "type": "string" },
+                  "dtm": { "required": true, "type": "string" },
+                  "type": { "required": true, "type": "string" },
+                  "fromsubscriberid": { "required": true, "type": "string" },
+                  "tosubscriberid": { "required": true, "type": "array" },
+                  "data": {  "required": true, "type": "object" ,
+                             "properties": {
+                                              "gid": { "required": true, "type": "string" },
+                                              "groupname": { "required": true, "type": "string" },
+                                              "imgfile": { "required": true, "type": "string" }
+                                           }
+                          }
+                },
+  "inviteFriend" : { "trx": { "required": true, "type": "string" },
+                  "cmd": { "required": true, "type": "string" },
+                  "dtm": { "required": true, "type": "string" },
+                  "type": { "required": true, "type": "string" },
+                  "fromsubscriberid": { "required": true, "type": "string" },
+                  "tosubscriberid": { "required": true, "type": "array" },
+                  "data": {  "required": true, "type": "object" ,
+                             "properties": {
+                                              "friendid" : { "required": true, "type": "string" },
+                                              "firstname": { "required": true, "type": "string" },
+                                              "middlename": { "required": false, "type": "string" },
+                                              "lastname": { "required": true, "type": "string" }, 
+                                              "displayname": { "required": false, "type": "string" },
+                                              "imgfile": { "required": true, "type": "string" }
+                                           }
+                          }
+                },
+  "rejectFriend" : { "trx": { "required": true, "type": "string" },
+                  "cmd": { "required": true, "type": "string" },
+                  "dtm": { "required": true, "type": "string" },
+                  "type": { "required": true, "type": "string" },
+                  "fromsubscriberid": { "required": true, "type": "string" },
+                  "tosubscriberid": { "required": true, "type": "array" },
+                  "data": {  "required": true, "type": "object" ,
+                             "properties": {
+                                              "friendid" : { "required": true, "type": "string" }
+                                           }
+                          }
+                },
+  "acceptFriend" : { "trx": { "required": true, "type": "string" },
+                  "cmd": { "required": true, "type": "string" },
+                  "dtm": { "required": true, "type": "string" },
+                  "type": { "required": true, "type": "string" },
+                  "fromsubscriberid": { "required": true, "type": "string" },
+                  "tosubscriberid": { "required": true, "type": "array" },
+                  "data": {  "required": true, "type": "object" ,
+                             "properties": {
+                                              "friendid" : { "required": true, "type": "string" }
+                                           }
+                          }
+                },
+  "sendGift" : { "trx": { "required": true, "type": "string" },
+                 "cmd": { "required": true, "type": "string" },
+                 "dtm": { "required": true, "type": "string" },
+                 "type": { "required": true, "type": "string" },
+                 "fromsubscriberid": { "required": true, "type": "string" },
+                 "tosubscriberid": { "required": true, "type": "string" },
+                 "data": {  "required": true, "type": "object"
+                         }
+               },
+  "transfer" : { "trx": { "required": true, "type": "string" },
+                 "cmd": { "required": true, "type": "string" },
+                 "dtm": { "required": true, "type": "string" },
+                 "type": { "required": true, "type": "string" },
+                 "fromsubscriberid": { "required": true, "type": "string" },
+                 "tosubscriberid": { "required": true, "type": "string" },
+                 "data": {  "required": true, "type": "object" ,
+                            "properties": {
+                                             "source" : { "required": true, "type": "array",
+                                                          "properties":  [{ "required": true, "type": "object", 
+                                                                            "properties": {
+                                                                                            "cid": { "required": true, "type": "string" },
+                                                                                            "amt": { "required": true, "type": "string" },
+                                                                                            "rwi": { "required": false, "type": "string" }
+                                                                                          }
+                                                                         }]
+                                                          
+                                                        },
+                                             "target" : { "required": true, "type": "array",
+                                                          "properties":  [{ "required": true, "type": "object", 
+                                                                            "properties": {
+                                                                                            "cid": { "required": true, "type": "string" },
+                                                                                            "rwi": { "required": false, "type": "string" }
+                                                                                          }
+                                                                         }]
+                                                          
+                                                        }
+                                          }
+                         }
+               },
+  "sendPointGift" : { "trx": { "required": true, "type": "string" },
+                      "cmd": { "required": true, "type": "string" },
+                      "dtm": { "required": true, "type": "string" },
+                      "type": { "required": true, "type": "string" },
+                      "fromsubscriberid": { "required": true, "type": "string" },
+                      "tosubscriberid": { "required": true, "type": "string" },
+                      "data": {  "required": true, "type": "object" ,
+                                 "properties": {
+                                                  "source" : { "required": true, "type": "array",
+                                                               "properties":  [{ "required": true, "type": "object", 
+                                                                                 "properties": {
+                                                                                                 "cid": { "required": true, "type": "string" },
+                                                                                                 "amt": { "required": true, "type": "string" },
+                                                                                                 "rwi": { "required": false, "type": "string" }
+                                                                                               }
+                                                                              }]
+                                                               
+                                                             },
+                                                  "target" : { "required": true, "type": "array",
+                                                               "properties":  [{ "required": true, "type": "object", 
+                                                                                 "properties": {
+                                                                                                 "cid": { "required": true, "type": "string" },
+                                                                                                 "rwi": { "required": false, "type": "string" }
+                                                                                               }
+                                                                              }]
+                                                               
+                                                             },
+                                                   "giftemplateid" : { "required": true, "type": "string" },
+                                                   "message" :{ "required": false, "type": "string" }
+                                               }
+                              }
+                    },
+  "sendThank": { "trx": { "required": true, "type": "string" },
+                "cmd": { "required": true, "type": "string" },
+                "dtm": { "required": true, "type": "string" },
+                "type": { "required": true, "type": "string" },
+                "tosubscriberid": { "required": true, "type": "string" },
+                "data": { "required": true, "type": "object" ,
+                          "properties": {
+                                           "message" : { "required": false, "type": "string" },
+                                           "sticker" : { "required": false, "type": "string" }
+                                        }
+                        }
+              },
+   "disconnect" : { "trx": { "required": true, "type": "string" },
+                 "cmd": { "required": true, "type": "string" },
+                 "dtm": { "required": true, "type": "string" },
+                 "type": { "required": true, "type": "string" },
+                 "tosubscriberid": { "required": true, "type": "array" },
+                 "description": { "required": true, "type": "string" }
+               }
+}
